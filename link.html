@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Link Your Dozen Account</title>
+    <script
+      type="text/javascript"
+      src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"
+    ></script>
+    <link rel="stylesheet" href="link.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <h1>Link Your Dozen Account</h1>
+    <h3>Step 1: Sign in with Apple</h3>
+    <div
+      id="appleid-signin"
+      data-color="white"
+      data-border="true"
+      data-type="sign in"
+      class="appleid-signin"
+    ></div>
+    <script type="text/javascript">
+      const state = crypto.randomUUID()
+      const nonce = crypto.randomUUID()
+
+      AppleID.auth.init({
+        clientId: "com.jacksheridan.dozen.signinwithapple",
+        redirectURI: "https://api.dozen.social/link/apple",
+        state,
+        nonce,
+        usePopup: false,
+      })
+    </script>
+    <h3>Step 2: Login with Discord</h3>
+    <p>Coming soon</p>
+    <!-- <a
+      id="login"
+      href="https://discord.com/oauth2/authorize?client_id=1458270889656320120&response_type=code&redirect_uri=https%3A%2F%2Fdozen.social%2Flink&scope=identify&state=asdf1234"
+      class="discord-signin"
+    >
+      <i class="fa-brands fa-discord text-2xl"></i>
+      <span>Login with Discord</span>
+    </a> -->
+  </body>
+</html>
