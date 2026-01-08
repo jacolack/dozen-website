@@ -2,6 +2,12 @@
 <html>
   <head>
     <title>Link Your Dozen Account</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+CZ:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
     <script
       type="text/javascript"
       src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"
@@ -16,36 +22,40 @@
     />
   </head>
   <body>
-    <h1>Link Your Dozen Account</h1>
-    <h3>Step 1: Sign in with Apple</h3>
-    <div
-      id="appleid-signin"
-      data-color="white"
-      data-border="true"
-      data-type="sign in"
-      class="appleid-signin"
-    ></div>
-    <script type="text/javascript">
-      const state = crypto.randomUUID()
-      const nonce = crypto.randomUUID()
-
-      AppleID.auth.init({
-        clientId: "com.jacksheridan.dozen.signinwithapple",
-        redirectURI: "https://api.dozen.social/link/apple",
-        state,
-        nonce,
-        usePopup: false,
-      })
-    </script>
-    <h3>Step 2: Login with Discord</h3>
-    <p>Coming soon</p>
-    <!-- <a
-      id="login"
-      href="https://discord.com/oauth2/authorize?client_id=1458270889656320120&response_type=code&redirect_uri=https%3A%2F%2Fdozen.social%2Flink&scope=identify&state=asdf1234"
-      class="discord-signin"
-    >
-      <i class="fa-brands fa-discord text-2xl"></i>
-      <span>Login with Discord</span>
-    </a> -->
+    <h1>
+      Link Your
+      <span class="main-title" style="font-size: inherit; margin: 0"
+        >Dozen</span
+      >
+      Account
+    </h1>
+    <div id="apple-container">
+      <h3>Step 1: Sign in with Apple</h3>
+      <div
+        id="appleid-signin"
+        data-color="white"
+        data-border="true"
+        data-type="sign in"
+        class="appleid-signin"
+      ></div>
+    </div>
+    <div id="discord-container">
+      <h3>Step 2: Login with Discord</h3>
+      <a
+        id="login"
+        href="https://discord.com/oauth2/authorize?client_id=1458270889656320120&response_type=code&redirect_uri=https%3A%2F%2Fapi.dozen.social%2Flink%2Fdiscord&scope=identify"
+        class="discord-signin"
+      >
+        <i class="fa-brands fa-discord text-2xl"></i>
+        <span>Login with Discord</span>
+      </a>
+    </div>
+    <div id="success-container">
+      <h3>
+        <i class="fa-solid fa-circle-check" style="color: #22c55e"></i> Success!
+      </h3>
+      <p>Your Dozen account has been linked to your Discord account.</p>
+    </div>
+    <script type="text/javascript" src="link.js"></script>
   </body>
 </html>
