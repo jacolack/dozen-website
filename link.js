@@ -19,7 +19,7 @@ const startFresh = () => {
   return
 }
 
-const startDiscord = () => {
+const startDiscord = (state) => {
   console.log("discord time")
 
   document.getElementById(
@@ -61,7 +61,7 @@ const onLoad = async () => {
 
   if (stage == "discord") {
     console.log("start discord")
-    startDiscord()
+    startDiscord(state)
     return
   }
 
