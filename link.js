@@ -22,6 +22,10 @@ const startFresh = () => {
 const startDiscord = () => {
   console.log("discord time")
 
+  document.getElementById(
+    "login"
+  ).href = `https://discord.com/oauth2/authorize?client_id=1458270889656320120&response_type=code&redirect_uri=https%3A%2F%2Fapi.dozen.social%2Flink%2Fdiscord&scope=identify&state=${state}`
+
   document.getElementById("apple-container").style.display = "none"
   document.getElementById("discord-container").style.display = "block"
   document.getElementById("success-container").style.display = "none"
